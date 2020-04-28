@@ -30,6 +30,9 @@ class TodosController<ApplicationController
 			end
 		
 	end
+	def index
+		@listing=Todo.all
+	end
 
 	private
 	def todo_params
