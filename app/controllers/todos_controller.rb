@@ -33,6 +33,12 @@ class TodosController<ApplicationController
 	def index
 		@listing=Todo.all
 	end
+	def destroy
+		@todo=Todo.find(params[:id])
+		@todo.destroy
+		flash[:notice]="Todo is sucessfully deleted"
+		redirect_to todos_path
+	end
 
 	private
 	def todo_params
